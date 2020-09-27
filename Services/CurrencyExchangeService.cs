@@ -4,17 +4,14 @@ using System.Threading;
 
 namespace Currency_MVC.Services
 {
-    public class CurrencyExchange : ICurrencyExchange
+    public class CurrencyExchangeService : ICurrencyExchangeService
     {
         private Timer _timer;
         private readonly Random _rnd;
 
-        public event Action<Currency> ExchangeRateChanged;
+        public event Action<CurrencyModel> ExchangeRateChanged;
 
-        public CurrencyExchange() 
-        {
-            _rnd = new Random();
-        }
+        public CurrencyExchangeService() => _rnd = new Random();
 
         public void Pause()
         {
@@ -24,17 +21,15 @@ namespace Currency_MVC.Services
 
         public void Resume()
         {
-            if (_timer == null)
-            {
+            if (_timer == null) 
                 _timer = new Timer(TimerTickCallback, null, 0, 1000);
-            }
         }
 
         private void TimerTickCallback(object obj) 
         {
             var value = new decimal(77 + _rnd.NextDouble());
 
-            var currency = new Currency(CurrencyCode.Usd, value);
+            var currency = new CurrencyModel(CurrencyCode.Usd, value);
             ExchangeRateChanged?.Invoke(currency);
         }
     }

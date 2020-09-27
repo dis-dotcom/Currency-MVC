@@ -47,10 +47,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\CurrencyController.cs" />
-    <Compile Include="Controller\ICurrencyController.cs" />
-    <Compile Include="Model\Currency.cs" />
-    <Compile Include="Services\CurrencyExchange.cs" />
-    <Compile Include="Services\ICurrencyExchange.cs" />
+    <Compile Include="Model\CurrencyModel.cs" />
+    <Compile Include="Services\CurrencyExchangeService.cs" />
+    <Compile Include="Services\ICurrencyExchangeService.cs" />
     <Compile Include="View\CurrencyViewForm.cs">
       <SubType>Form</SubType>
     </Compile>

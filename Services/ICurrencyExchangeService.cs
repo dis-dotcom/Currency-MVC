@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Currency_MVC.Services
 {
-    public interface ICurrencyExchange
+    public interface ICurrencyExchangeService
     {
-        event Action<Currency> ExchangeRateChanged;
+        event Action<CurrencyModel> ExchangeRateChanged;
 
         void Resume();
         void Pause();

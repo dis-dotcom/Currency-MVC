@@ -6,13 +6,13 @@
         // EUR is unused
     }
 
-    public class Currency
+    public class CurrencyModel
     {
         private CurrencyCode Code { get; }
 
         public decimal Value { get; }
 
-        public Currency(CurrencyCode code, decimal value)
+        public CurrencyModel(CurrencyCode code, decimal value)
         {
             Code = code;
             Value = value;

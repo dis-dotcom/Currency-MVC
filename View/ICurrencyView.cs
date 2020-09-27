@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Currency_MVC.View
 {
@@ -10,7 +6,7 @@ namespace Currency_MVC.View
     {
         event Action StartTrackClick;
         event Action StopTrackClick;
-
+        
         void SetValue(string value);
     }
 }
