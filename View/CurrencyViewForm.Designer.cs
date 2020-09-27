@@ -1,4 +1,4 @@
-﻿namespace Currency_MVC
+﻿namespace Currency_MVC.View
 {
     partial class CurrencyView
     {

@@ -6,35 +6,35 @@ namespace Currency_MVC.Services
 {
     public class CurrencyExchange : ICurrencyExchange
     {
-        private Timer timer;
-        private Random rnd;
+        private Timer _timer;
+        private readonly Random _rnd;
 
         public event Action<Currency> ExchangeRateChanged;
 
         public CurrencyExchange() 
         {
-            rnd = new Random();
+            _rnd = new Random();
         }
 
         public void Pause()
         {
-            timer?.Dispose();
-            timer = null;
+            _timer?.Dispose();
+            _timer = null;
         }
 
         public void Resume()
         {
-            if (timer == null)
+            if (_timer == null)
             {
-                timer = new Timer(TimerTickCallback, null, 0, 1000);
+                _timer = new Timer(TimerTickCallback, null, 0, 1000);
             }
         }
 
         private void TimerTickCallback(object obj) 
         {
-            decimal value = new decimal(77 + rnd.NextDouble());
+            var value = new decimal(77 + _rnd.NextDouble());
 
-            var currency = new Currency(CurrencyCode.USD, value);
+            var currency = new Currency(CurrencyCode.Usd, value);
             ExchangeRateChanged?.Invoke(currency);
         }
     }

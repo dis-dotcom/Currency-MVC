@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Currency_MVC.Services
 {
-    interface ICurrencyExchange
+    public interface ICurrencyExchange
     {
         event Action<Currency> ExchangeRateChanged;
 

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Currency_MVC.Controller
+﻿namespace Currency_MVC.Controller
 {
-    interface ICurrencyController
+    public interface ICurrencyController
     {
-
+        // 4e za marker interface blyat?
     }
 }

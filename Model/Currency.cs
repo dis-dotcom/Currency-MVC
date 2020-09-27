@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Currency_MVC.Model
+﻿namespace Currency_MVC.Model
 {
     public enum CurrencyCode
     {
-        USD, EUR
+        Usd, Eur
+        // EUR is unused
     }
 
     public class Currency
     {
-        public CurrencyCode Code { get; }
+        private CurrencyCode Code { get; }
 
         public decimal Value { get; }
 

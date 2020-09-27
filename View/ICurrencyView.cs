@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Currency_MVC.View
 {
-    interface ICurrencyView
+    internal interface ICurrencyView
     {
         event Action StartTrackClick;
         event Action StopTrackClick;
