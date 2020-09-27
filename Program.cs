@@ -15,7 +15,7 @@ namespace Currency_MVC
             Application.SetCompatibleTextRenderingDefault(false);
 
             var view = new CurrencyView();
-            var exchange = new CurrencyExchange();
+            var exchange = new CurrencyExchangeService();
             var controller = new CurrencyController(view, exchange);    // unused
 
             Application.Run(view);
