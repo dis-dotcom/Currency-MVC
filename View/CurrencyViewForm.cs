@@ -1,15 +1,14 @@
-﻿using Currency_MVC.View;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace Currency_MVC
+namespace Currency_MVC.View
 {
     public partial class CurrencyView : Form, ICurrencyView
     {
         public event Action StartTrackClick;
         public event Action StopTrackClick;
 
-        private bool canClick;
+        private bool _canClick;
 
         public CurrencyView()
         {
@@ -23,29 +22,29 @@ namespace Currency_MVC
 
         private void startBtn_Click(object sender, EventArgs e)
         {
-            if (!canClick)
+            if (!_canClick)
                 return;
 
-            canClick = false;
+            _canClick = false;
             StartTrackClick?.Invoke();
             SetStopState();
-            canClick = true;
+            _canClick = true;
         }
 
         private void stopBtn_Click(object sender, EventArgs e)
         {
-            if (!canClick)
+            if (!_canClick)
                 return;
 
-            canClick = false;
+            _canClick = false;
             StopTrackClick?.Invoke();
             SetStartState();
-            canClick = true;
+            _canClick = true;
         }
 
         private void CurrencyView_Shown(object sender, EventArgs e)
         {
-            canClick = true;
+            _canClick = true;
             SetStartState();
         }
 
