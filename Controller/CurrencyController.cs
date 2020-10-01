@@ -6,7 +6,7 @@ using Currency_MVC.View;
 
 namespace Currency_MVC.Controller
 {
-    internal class CurrencyController
+    public class CurrencyController
     {
         private readonly ICurrencyView _view;
         private readonly ICurrencyExchangeService _exchangeService;

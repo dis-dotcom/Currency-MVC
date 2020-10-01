@@ -2,7 +2,7 @@
 
 namespace Currency_MVC.View
 {
-    internal interface ICurrencyView
+    public interface ICurrencyView
     {
         event Action StartTrackClick;
         event Action StopTrackClick;
